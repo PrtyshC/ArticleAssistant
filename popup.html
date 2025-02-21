@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Assistant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      width: 300px;
+    }
+    #summary {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f3f3f3;
+      border-radius: 5px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    /* Hover Effect */
+    button:hover {
+      background-color: #45a049;
+      box-shadow: 0 0 8px #66bb6a;
+    }
+    /* Active Effect (Click) */
+    button:active {
+      background-color: #388e3c;
+      box-shadow: 0 0 12px #66bb6a;
+    }
+    /* Loading Spinner */
+    #loading {
+      display: none;
+      margin: 10px auto;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #4CAF50;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h3>Article Assistant</h3>
+  
+  <button id="summarizeBtn">Summarize This Page</button>
+  
+  <div id="loading"></div> <!-- Loading Spinner -->
+  
+  <div id="summary"></div>
+
+  <hr>
+  
+  <h4>Ask a Question</h4>
+  <input type="text" id="queryInput" placeholder="Ask anything about the article...">
+  <button id="askBtn">Ask</button>
+
+  <div id="response"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
